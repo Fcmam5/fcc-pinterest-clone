@@ -8,6 +8,7 @@ var helper = require('./helperFunctions');
 */
 router.get('/dashboard', helper.isLoggedIn, LinkController.myBoard);
 router.post('/dashboard', helper.isLoggedIn, LinkController.create);
+router.post('/remove', helper.isLoggedIn, LinkController.remove);
 
 /*
 * Main view

@@ -51,5 +51,17 @@ module.exports = {
       }
       return res.render('links/all', {user: req.user, links: Links});
     });
+  },
+  remove: function (req, res) {
+    var id = req.body.id;
+    LinkModel.findOneAndRemove({'_id': id, 'author': req.user}, function (err, Link) {
+        if (err || !Link) {
+            return res.status(500).json({
+                message: 'Error when deleting the Link.',
+                error: err
+            });
+        }
+        return res.json(Link);
+    });
   }
 };

@@ -70,7 +70,7 @@
         </div>
       <% if (typeof links !== 'undefined' && links.length > 0) { %>
         <% for(var i = 0; i < links.length; i++) { %>
-          <div class="grid-item">
+          <div class="grid-item" id="<%= links[i]._id %>">
             <div class='panel panel-default'>
               <div class='panel-body'>
                 <img src="<%= links[i].imageURL %>" alt="<%= links[i].title %>" class="img-responsive">
@@ -80,7 +80,10 @@
                   <%= links[i].title %>
                 </p>
                 <p class='text-right'>
-                  &hearts; <%= links[i].likers.length %>
+                   <a href="#" data-uid="<%= links[i]._id %>" class='remove-btn'>
+                    <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                   </a>
+                   &hearts; <%= links[i].likers.length %>
                 </p>
               </div>
 
