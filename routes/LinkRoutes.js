@@ -9,4 +9,9 @@ var helper = require('./helperFunctions');
 router.get('/dashboard', helper.isLoggedIn, LinkController.myBoard);
 router.post('/dashboard', helper.isLoggedIn, LinkController.create);
 
+/*
+* Main view
+*/
+router.get('/', LinkController.show);
+
 module.exports = router;

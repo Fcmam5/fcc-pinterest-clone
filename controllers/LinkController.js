@@ -40,5 +40,16 @@ module.exports = {
       return res.json(Link);
     });
   },
-
+  show: function (req, res) {
+    LinkModel.find(function(err, Links){
+      if (err) {
+        // TODO: change this !
+        return res.status(500).json({
+          message: 'Error when creating link.',
+          error: err
+        });
+      }
+      return res.render('links/all', {user: req.user, links: Links});
+    });
+  }
 };

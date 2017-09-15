@@ -48,6 +48,11 @@
     clearTimeout(timer);
     timer = setTimeout(function () {
       $('#image-preview').attr('src', $('input[name="image"]').val());
-    },500);
-  })
+    },100);
+  });
+
+  $('img').error(function(){
+    $(this).attr('src', '/images/missing.png');
+  });
+  
 }());
