@@ -4,7 +4,7 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Book trading club', user: req.user});
+  res.render('index', { title: 'Pinetrest clone', user: req.user});
 });
 
 /* GET Login page. */
